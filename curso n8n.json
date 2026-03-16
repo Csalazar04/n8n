@@ -1,0 +1,336 @@
+{
+  "name": "curso n8n",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "db7acaeb-ab8c-4bfd-a5ae-b81152e41885",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -640,
+        -32
+      ],
+      "id": "dde7e77c-771a-432f-91a3-dbb5d204e421",
+      "name": "Webhook",
+      "webhookId": "db7acaeb-ab8c-4bfd-a5ae-b81152e41885"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3b20fae1-ee7d-49fd-90ff-dc07bd6f0a4e",
+              "name": "Nombre",
+              "value": "={{ $json.query.Nombre }}",
+              "type": "string"
+            },
+            {
+              "id": "c21de17e-e664-4ad6-aeb9-f435c0596abd",
+              "name": "Apellido",
+              "value": "={{ $json.query.Apellido }}",
+              "type": "string"
+            },
+            {
+              "id": "e5091c1a-a54f-43fc-b965-e86bba9d86b7",
+              "name": "Edad",
+              "value": "={{ $json.query.Edad }}",
+              "type": "array"
+            },
+            {
+              "id": "0d69ff9f-aa96-47c4-a51d-1e3f95ccb8d0",
+              "name": "Correo",
+              "value": "={{ $json.query.Correo }}",
+              "type": "array"
+            },
+            {
+              "id": "bf9e7149-de65-4230-b9e8-969d43d34b5b",
+              "name": "Cédula",
+              "value": "={{ $json.query[\"Cédula\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "dd69fd8b-f90e-465b-a745-ce649414a061",
+              "name": "Teléfono",
+              "value": "={{ $json.query[\"Teléfono\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "be42f5fc-bbf4-4e7d-bb17-c2d005806f90",
+              "name": "Fecha Cita",
+              "value": "={{ $json.query[\"Fecha Cita\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "0615f2a4-423d-4d4f-bcf9-22514fe23376",
+              "name": "Hora Cita",
+              "value": "={{ $json.query[\"Hora Cita\"] }}",
+              "type": "string"
+            },
+            {
+              "id": "eb2d00a7-5fb3-4eab-a90b-0072ec777182",
+              "name": "Tipo de Servicio",
+              "value": "={{ $json.query[\"Tipo de Servicio\"] }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -448,
+        -32
+      ],
+      "id": "16f9853f-a5e6-4d4a-9d20-a992cf2e335a",
+      "name": "Edit Fields"
+    },
+    {
+      "parameters": {
+        "operation": "appendOrUpdate",
+        "documentId": {
+          "__rl": true,
+          "value": "15Lmqi7j4TJ47WdT8IhpdmBiOSDevwoLMkP3msJW7BxE",
+          "mode": "list",
+          "cachedResultName": "Curso n8n",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15Lmqi7j4TJ47WdT8IhpdmBiOSDevwoLMkP3msJW7BxE/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Hoja 1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/15Lmqi7j4TJ47WdT8IhpdmBiOSDevwoLMkP3msJW7BxE/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Nombre": "={{ $json.Nombre }}",
+            "Apellido": "={{ $json.Apellido }}",
+            "Cédula": "={{ $json[\"Cédula\"] }}",
+            "Edad": "={{ $json.Edad }}",
+            "Correo": "={{ $json.Correo }}",
+            "Teléfono": "={{ $json[\"Teléfono\"] }}",
+            "Fecha": "={{ $json[\"Fecha Cita\"] }}",
+            "Hora": "={{ $json[\"Hora Cita\"] }}",
+            "Tipo Cita": "={{ $json[\"Tipo de Servicio\"] }}"
+          },
+          "matchingColumns": [
+            "Apellido"
+          ],
+          "schema": [
+            {
+              "id": "Nombre",
+              "displayName": "Nombre",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Apellido",
+              "displayName": "Apellido",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Cédula",
+              "displayName": "Cédula",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Edad",
+              "displayName": "Edad",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Correo",
+              "displayName": "Correo",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Teléfono",
+              "displayName": "Teléfono",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Fecha",
+              "displayName": "Fecha",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Hora",
+              "displayName": "Hora",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Tipo Cita",
+              "displayName": "Tipo Cita",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        -240,
+        -32
+      ],
+      "id": "90251b30-f48b-4afb-b142-c4f26dd9c7d8",
+      "name": "Append or update row in sheet",
+      "alwaysOutputData": false,
+      "retryOnFail": true,
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "Lge4MvOOLu7myq33",
+          "name": "Google Sheets account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "sendTo": "caleb.santiago.04@gmail.com",
+        "subject": "Datos Cliente",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Nueva cita registrada</title>\n</head>\n\n<body style=\"margin:0; padding:0; background-color:#f4f4f4; font-family:Arial, Helvetica, sans-serif;\">\n\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#f4f4f4; padding:40px 0;\">\n<tr>\n<td align=\"center\">\n\n<table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#ffffff; border-radius:10px; overflow:hidden;\">\n\n<tr>\n<td style=\"background:#111111; color:#ffffff; text-align:center; padding:25px; font-size:26px; font-weight:bold;\">\n📋 Nueva cita registrada\n</td>\n</tr>\n\n<tr>\n<td style=\"padding:35px; color:#333333;\">\n\n<h2 style=\"margin-top:0;\">Notificación para el administrador</h2>\n\n<p style=\"font-size:16px; line-height:1.6;\">\nSe ha registrado una nueva cita en <strong>Studio Hair</strong>.  \nA continuación se muestran los datos del cliente:\n</p>\n\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"margin:25px 0; background:#f9f9f9; border-radius:6px;\">\n<tr>\n<td style=\"padding:20px; font-size:15px; line-height:1.8;\">\n\n<strong>Nombre:</strong> {{ $json.Nombre }}<br>\n<strong>Apellido:</strong> {{ $json.Apellido }}<br>\n<strong>Cédula:</strong> {{ $json[\"Cédula\"] }}<br>\n<strong>Edad:</strong> {{ $json.Edad }}<br>\n<strong>Teléfono:</strong> {{ $json[\"Teléfono\"] }}<br>\n<strong>Correo:</strong> {{ $json.Correo }}<br><br>\n\n<strong>Fecha de la cita:</strong> {{ $json.Fecha }}<br>\n<strong>Hora:</strong> {{ $json.Hora }}<br>\n<strong>Servicio:</strong> {{ $json[\"Tipo Cita\"] }}\n\n</td>\n</tr>\n</table>\n\n<p style=\"font-size:15px; line-height:1.6;\">\nPuedes contactar al cliente usando su teléfono o correo si necesitas confirmar la reserva o hacer cambios.\n</p>\n\n</td>\n</tr>\n\n<tr>\n<td style=\"background:#f1f1f1; text-align:center; padding:20px; font-size:13px; color:#777777;\">\nNotificación automática del sistema de reservas • Studio Hair\n</td>\n</tr>\n\n</table>\n\n</td>\n</tr>\n</table>\n\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        144,
+        -32
+      ],
+      "id": "2c323670-d40e-405a-b939-4eb27224d053",
+      "name": "Send a message",
+      "webhookId": "e6b57698-ef4f-43eb-b48e-e96f33792230",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "iLSync0JOvPW5UrL",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "caleb.santiago.04@gmail.com",
+        "subject": "Intento de creación de reserva",
+        "message": "=<!DOCTYPE html>\n<html lang=\"es\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<title>Error en el sistema de reservas</title>\n</head>\n\n<body style=\"margin:0; padding:0; background-color:#f4f4f4; font-family:Arial, Helvetica, sans-serif;\">\n\n<table width=\"100%\" cellpadding=\"0\" cellspacing=\"0\" style=\"padding:40px;\">\n<tr>\n<td align=\"center\">\n\n<table width=\"600\" cellpadding=\"0\" cellspacing=\"0\" style=\"background:#ffffff; border-radius:10px; overflow:hidden;\">\n\n<tr>\n<td style=\"background:#b00020; color:white; text-align:center; padding:25px; font-size:26px; font-weight:bold;\">\n⚠️ Error en el sistema de reservas\n</td>\n</tr>\n\n<tr>\n<td style=\"padding:35px; color:#333;\">\n\n<h2 style=\"margin-top:0;\">No se pudo completar el registro de una cita</h2>\n\n<p style=\"font-size:16px; line-height:1.6;\">\nEl sistema intentó registrar una nueva cita en <strong>Studio Hair</strong>, pero ocurrió un error y la operación no se completó correctamente.\n</p>\n\n<p style=\"font-size:16px; line-height:1.6;\">\nEsto puede deberse a:\n</p>\n\n<ul style=\"font-size:15px; line-height:1.8;\">\n<li>Problemas con el servidor.</li>\n<li>Error en el flujo de automatización.</li>\n<li>Fallo en la conexión con el formulario.</li>\n<li>Datos incompletos enviados por el sistema.</li>\n</ul>\n\n<p style=\"font-size:15px; line-height:1.6;\">\nSe recomienda revisar el flujo de reservas en el sistema para identificar el problema.\n</p>\n\n<table width=\"100%\" style=\"margin-top:25px; background:#f9f9f9;\">\n<tr>\n<td style=\"padding:15px; font-size:14px;\">\n</td>\n</tr>\n</table>\n\n</td>\n</tr>\n\n<tr>\n<td style=\"background:#eeeeee; text-align:center; padding:20px; font-size:13px; color:#777;\">\nNotificación automática del sistema • Studio Hair\n</td>\n</tr>\n\n</table>\n\n</td>\n</tr>\n</table>\n\n</body>\n</html>",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        64,
+        176
+      ],
+      "id": "9fc50d5d-647b-4192-80b0-5c9b64f84e23",
+      "name": "Send a message1",
+      "webhookId": "38cf0d4e-fa1e-4256-af6c-63808e5dc499",
+      "alwaysOutputData": true,
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "iLSync0JOvPW5UrL",
+          "name": "Gmail account"
+        }
+      },
+      "onError": "continueErrorOutput"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Edit Fields",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Edit Fields": {
+      "main": [
+        [
+          {
+            "node": "Append or update row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append or update row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send a message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "ec58cb5a-fa62-4a75-8502-8bac949c73e8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "0338a15a1fa2dff22d078d32d027d3d62a92f5bdb5ad3c7f0c26df26ab73a090"
+  },
+  "id": "YWbQAQyLrvPIMmhf",
+  "tags": []
+}
